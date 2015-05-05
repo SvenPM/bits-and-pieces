@@ -10,9 +10,9 @@ MINCOUNT=5
 CONFIG=/home/$USER/.config
 
 # get path of current wallpaper from bg-saved.cfg
-CURRENT=`cat "$CONFIG/nitrogen/bg-saved.cfg" | grep -Po "(?<=file=).*"`
+CURRENT=`grep -Po "(?<=file=).*" "$CONFIG/nitrogen/bg-saved.cfg"`
 #read the wallpaper directories from nitrogen.cfg
-FILES=`cat "$CONFIG/nitrogen/nitrogen.cfg" | grep -E "^dirs=.*" | grep -Po "(?<==).*" | sed "s/;/\/\* /g"`
+FILES=`grep -E "^dirs=.*" "$CONFIG/nitrogen/nitrogen.cfg" | grep -Po "(?<==).*" | sed "s/;/\/\* /g"`
 
 # make sure there are enough wallpapers available, randomizing doesn't make a lot of sense with only a few wallies.
 COUNT=`ls $FILES | grep -Eic ".*\.(png|jpe?g|bmp)"`
