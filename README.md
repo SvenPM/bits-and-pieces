@@ -1,7 +1,8 @@
 # bits-and-pieces
-Just some code pieces I found useful, they come with absolutely no warranties. I only put them together for my Linux setup and they are working fine there.
+Just some code pieces I found useful, they come with absolutely no warranties. I only put them together for my Linux setup and they are working fine there. I am doing this just for fun and to learn some scripting.
 
-Openbox Stuff
+# Openbox Stuff
+
 * Screen saver/lock
   
   A screen saver/lock with power saving ability for Openbox (and maybe other WMs) based on gnome-screensaver, xautolock, scrot and imagemagick
