@@ -6,13 +6,13 @@
 ## requires: nitrogen, imagemagick, notify-send
 
 # some settings
-MINCOUNT=5
+MINCOUNT=5              # don't make smaller than two
 CONFIG=/home/$USER/.config
 
 # get path of current wallpaper from bg-saved.cfg
 CURRENT=`grep -Po "(?<=file=).*" "$CONFIG/nitrogen/bg-saved.cfg"`
 #read the wallpaper directories from nitrogen.cfg
-FILES=`grep -E "^dirs=.*" "$CONFIG/nitrogen/nitrogen.cfg" | grep -Po "(?<==).*" | sed "s/;/\/\* /g"`
+FILES=`grep -Po "(?<=dirs=).*" "$CONFIG/nitrogen/nitrogen.cfg" | sed "s/;/\/\* /g"`
 
 # make sure there are enough wallpapers available, randomizing doesn't make a lot of sense with only a few wallies.
 COUNT=`ls $FILES | grep -Eic ".*\.(png|jpe?g|bmp)"`
